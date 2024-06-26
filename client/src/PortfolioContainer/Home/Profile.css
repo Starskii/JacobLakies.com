@@ -71,4 +71,11 @@
     background-image: url('../../assets/Home/profilephoto.jpg');
     background-size: cover;
     border-radius: 50%;   
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.profile-picture-background:hover{
+    height: 100%;
+    width: 100%;
 }
