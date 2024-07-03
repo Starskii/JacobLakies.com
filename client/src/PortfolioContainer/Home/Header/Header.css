@@ -1,7 +1,7 @@
 .header-container{
     display: flex;
     justify-content: center;
-    height: 140px;
+    height: 149px;
     color: var(--white);
 }
 
@@ -15,7 +15,7 @@
 }
 
 .header-logo{
-    font-size: 50px;
+    font-size: 32px;
     font-family: "Poppins ExtraBold";
     color: var(--white)
 }
@@ -26,7 +26,7 @@
 }
 
 .header-option{
-    font-size: 16px;
+    font-size: 24px;
     cursor: pointer;
     font-weight: 600;
 }
@@ -36,13 +36,13 @@
     color: var(--white);
 }
 
-.header-options-seperator{
+.header-option-seperator{
     margin: 0 50px 0 0;
     color: var(--white);
 }
 
 .selected-header-option{
-    color: var(--orange)
+    color: var(--dark-orange)
 }
 
 @media only screen and (max-width: 1110px){
@@ -73,7 +73,7 @@
         opacity: .8;
         transition: all 0.8s ease-out;
     }
-    .header-options-seperator{
+    .header-option-seperator{
         margin: 0;
     }
     .selected-header-option{
