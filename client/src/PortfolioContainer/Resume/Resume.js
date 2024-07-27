@@ -29,7 +29,15 @@ export default function Resume(props) {
                 </div>
             </div>
         </div>;
-    }
+    };
+
+    const resumeBullets = [
+        {label: "Education", logoSrc: "education.svg"},
+        {label: "Work History", logoSrc: "work-history.svg"},
+        {label: "Programming Skills", logoSrc: "programming-skills.svg"},
+        {label: "Projects", logoSrc: "projects.svg"},
+        {label: "Interests", logoSrc: "interests.svg"}
+    ]
 
     let fadeInScreenHandler = (screen) => {
         if (screen.fadeScreen !== props.id) return;
