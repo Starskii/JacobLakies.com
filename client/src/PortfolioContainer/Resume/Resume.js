@@ -82,7 +82,7 @@ export default function Resume(props) {
         {
             title: "Planetary Defense",
             duration: {fromDate: "2024", toDate: "2024"},
-            description: "A simple turret-defense game where alien ships are coming to attack your homeworld! Earn money, invest in upgrades and use abilities to save your homeworld! Can be played a https://www.commoncadet.com/games/planetary-defense",
+            description: "A simple turret-defense game where alien ships are coming to attack your homeworld! Earn money, invest in upgrades and use abilities to save your homeworld! Can be played at https://www.commoncadet.com/games/planetary-defense",
             subHeading: "Technologies Used: Godot, GDScript"
         },
     ];
@@ -176,7 +176,7 @@ export default function Resume(props) {
     ];
 
     const handleCarousal = (index) => {
-        let offsetHeight = 360;
+        let offsetHeight = 500;
         let newCarousalOffset = {
             style: {transform: "translateY(" + index * offsetHeight * -1 + "px)"}
         };
