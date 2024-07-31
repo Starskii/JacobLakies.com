@@ -155,7 +155,7 @@ export default function Resume(props) {
         <div className='resume-screen-container' key="projects">
         {projectDetails.map((projectDetails, index) => (
             <ResumeHeading 
-            Key={index}
+            key={index}
             heading={projectDetails.title}
             subHeading={projectDetails.subHeading}
             description={projectDetails.description}
