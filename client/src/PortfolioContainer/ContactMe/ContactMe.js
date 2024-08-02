@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ContactMe.css";
 import imgBack from "../../assets/ContactMe/mailz.jpeg";
 import loadingBar from "../../assets/ContactMe/load2.gif";
@@ -21,8 +21,14 @@ export default function ContactMe(props) {
     Animations.animations.fadeInScreen(props.id);
   };
 
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  useEffect(() => {
+    const fadeInSubscription =
+      ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
+    return () => {
+      fadeInSubscription.unsubscribe();
+    };
+  }, [props.id]);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -44,6 +50,7 @@ export default function ContactMe(props) {
     <div className="main-container" id={props.id || ""}>
       <ScreenHeading subHeading={"Let's Get in Touch!"} title={"Contact Me"} />
       <div className="central-form">
+        <img src={imgBack} className="form-bg" alt='Background' />
         <div className="col">
           <h2>Let's {typeEffect}</h2>
           <a
@@ -63,7 +70,6 @@ export default function ContactMe(props) {
           <div className="back-form">
             <div className="img-back">
               <h4>Send Your Email Here!</h4>
-              <img src={imgBack} alt='Image not found!' />
             </div>
             <form>
               <p>{banner}</p>

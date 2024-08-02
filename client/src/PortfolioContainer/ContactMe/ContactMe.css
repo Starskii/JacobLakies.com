@@ -1,8 +1,8 @@
-.main-container{
+.main-container {
     min-height: 100vh;
 }
 
-.central-form{
+.central-form {
     max-width: 1100px;
     padding: 10px;
     display: flex;
@@ -11,20 +11,32 @@
     flex-direction: column;
     justify-content: center;
     background-color: #1f2235;
+    position: relative; /* Added to position the background image */
 }
 
-.central-form h2{
+.form-bg {
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+.central-form h2 {
     color: white;
     letter-spacing: 0.2rem;
     margin-bottom: 20px;
 }
 
-.back-form{
+.back-form {
     max-width: 380px;
     margin: 0 auto;
 }
 
-.back-form img-back{
+.back-form img-back {
     width: 100%;
     margin-bottom: 20px;
 }
@@ -42,7 +54,7 @@
     opacity: 0.5;
 }
 
-.central-form form{
+.central-form form {
     width: auto;
     display: flex;
     color: #111;
@@ -54,21 +66,21 @@
     border-radius: 12px;
 }
 
-form p{
+form p {
     text-align: center;
     margin-bottom: 10px;
     color: var(--dark-orange);
     letter-spacing: 0.4rem;
-    font-family: "Poppins Bold"
+    font-family: "Poppins Bold";
 }
 
-form label{
+form label {
     margin-bottom: 5px;
     color: #111;
     letter-spacing: 0.2rem;
 }
 
-form input, textarea{
+form input, textarea {
     width: 100%;
     border: 2px solid rgba(0, 0, 0, 0);
     outline: none;
@@ -80,17 +92,17 @@ form input, textarea{
     transition: 0.3s;
 }
 
-textarea:focus{
+textarea:focus {
     border: 2px solid rgba(30, 85, 250, 0.47);
     background-color: white;
 }
 
-input:focus{
+input:focus {
     border: 2px solid rgba(30, 85, 250, 0.47);
     background-color: white;
 }
 
-form button{
+form button {
     margin-top: 15px;
     padding: 5px;
     outline: none;
@@ -104,13 +116,13 @@ form button{
     justify-content: center;
 }
 
-form button:hover{
+form button:hover {
     background-color: #1f2235;
     transition: all ease 1s;
     border: 2px solid #1f2235;
 }
 
-.img-back{
+.img-back {
     flex: 1;
     align-self: center;
     margin-right: 20px;
@@ -122,8 +134,9 @@ form button:hover{
     padding: 12px;
     padding-left: 0px;
     font-size: 25px;
-  }
-  .col i:hover {
+}
+
+.col i:hover {
     transform: scale(1.2);
     color: cornsilk;
-  }
+}
