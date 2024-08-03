@@ -2,7 +2,7 @@
     min-height: 100vh;
     margin-left: 20px;
     margin-right: 20px;
-    margin: 50px 0;
+    margin: 100px 0;
 }
 
 .central-form {
@@ -123,6 +123,15 @@ form button:hover {
     background-color: #1f2235;
     transition: all ease 1s;
     border: 2px solid #1f2235;
+}
+
+button .load {
+    width: 100%;
+}
+
+button .load img {
+    width: 60px;
+    color: green;
 }
 
 .img-back {
