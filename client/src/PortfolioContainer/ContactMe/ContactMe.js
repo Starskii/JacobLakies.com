@@ -13,7 +13,7 @@ export default function ContactMe(props) {
     typeSpeed: 50,
     deleteSpeed: 40,
     delaySpeed: 3000,
-    loop: {}
+    loop: {},
   });
 
   let fadeInScreenHandler = (screen) => {
@@ -30,27 +30,31 @@ export default function ContactMe(props) {
     };
   }, [props.id]);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [banner, setBanner] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [banner, setBanner] = useState("");
   const [bool, setBool] = useState(false);
 
   const handleName = (e) => {
     setName(e.target.value);
-  }
+  };
   const handleEmail = (e) => {
     setEmail(e.target.value);
-  }
+  };
   const handleMessage = (e) => {
     setMessage(e.target.value);
-  }
+  };
+  const submitForm = (e) => {
+    e.preventDefault();
+    console.log("hello");
+  };
 
   return (
     <div className="main-container" id={props.id || ""}>
       <ScreenHeading subHeading={"Let's Get in Touch!"} title={"Contact Me"} />
       <div className="central-form">
-        <img src={imgBack} className="form-bg" alt='Background' />
+        <img src={imgBack} className="form-bg" alt="Background" />
         <div className="col">
           <h2>Let's {typeEffect}</h2>
           <a
@@ -71,25 +75,23 @@ export default function ContactMe(props) {
             <div className="img-back">
               <h4>Send Your Email Here!</h4>
             </div>
-            <form>
+            <form onSubmit={submitForm}>
               <p>{banner}</p>
-              <label htmlFor='name'>Name</label>
-              <input type='text' 
-              onChange={handleName}
-              value={name}
-              />
+              <fieldset>
+                <legend htmlFor="name_input">Name</legend>
+                <input type="text" onChange={handleName} value={name} id="name_input"/>
 
-              <label htmlFor='email'>Email</label>
-              <input type='text' 
-              onChange={handleEmail}
-              value={email}
-              />
+                <legend htmlFor="email_input">Email</legend>
+                <input type="text" onChange={handleEmail} value={email} id="email_input"/>
 
-              <label htmlFor='message'>Message</label>
-              <textarea type='text' 
-              onChange={handleMessage}
-              value={message}
-              />
+                <legend htmlFor="message_input">Message</legend>
+                <textarea
+                  type="text"
+                  onChange={handleMessage}
+                  id="message_input"
+                  value={message}
+                />
+              </fieldset>
 
               <div className="send-btn">
                 <button type="submit">
