@@ -55,7 +55,7 @@ export default function AboutMe(props) {
             </div>
             <div className="about-me-options">
                 {" "}
-              <button className="btn primary-btn"> Hire Me{" "}</button>
+              <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()}> Hire Me{" "}</button>
               <a
                 href="JacobLakiesSoftwareDeveloper.pdf"
                 download="JacobLakiesSoftwareDeveloper.pdf"
