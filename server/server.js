@@ -10,7 +10,7 @@ const app = express();
 // Creating the middleware 
 app.use(express.json());
 app.use(cors());
-app.use("/", contactRoute);
+app.use("/api/", contactRoute);
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static("client/build"));
