@@ -1,0 +1,36 @@
+{
+    "projects": [
+      {
+        "name": "client-frontend",
+        "rootDirectory": "client"
+      },
+      {
+        "name": "server-backend",
+        "rootDirectory": "server"
+      }
+    ],
+    "builds": [
+      {
+        "src": "client/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "client/build"
+        }
+      },
+      {
+        "src": "server/package.json",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "server/src/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "client/$1"
+      }
+    ]
+  }
+  
