@@ -16,6 +16,7 @@ app.use("/api/", contactRoute);
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
+    console.log("WOWEE BAUS");
     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
