@@ -56,7 +56,7 @@ export default function ContactMe(props) {
         message,
       };
       setBool(true);
-      const res = await axios.post("/api/contact", data);
+      const res = await axios.post("https://jacoblakies-dot-com-81a6b6d5fd12.herokuapp.com/contact", data);
       if (name.length <= 0 || email.length <= 0 || message <= 0) {
         setBanner(res.data.msg);
         toast.error(res.data.msg);
