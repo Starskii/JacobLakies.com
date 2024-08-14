@@ -13,6 +13,7 @@ export default class ScrollService {
   constructor() {
     /* ADD SCROLL EVENT TO WINDOW */
     window.addEventListener("scroll", this.checkCurrentScreenUnderViewport);
+    window.addEventListener("load", this.checkCurrentScreenUnderViewport);
   }
 
   /* SCROLL TO HIRE ME / CONTACT ME SCREEN */
@@ -74,6 +75,8 @@ export default class ScrollService {
             fadeInScreen: screen.screen_name,
           });
           screen["alreadyRendered"] = true;
+          if (screen.screen_name == "Home")
+            continue;
           break;
         }
 
