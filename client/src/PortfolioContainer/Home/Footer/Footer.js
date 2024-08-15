@@ -6,8 +6,6 @@ export default function Footer() {
   return (
     <div className='footer-container'>
         <div className='footer-parent'>
-            <img src={(backgroundshape)}
-            alt='no internet connection'></img>
         </div>
     </div>
   )

@@ -75,7 +75,7 @@ export default class ScrollService {
             fadeInScreen: screen.screen_name,
           });
           screen["alreadyRendered"] = true;
-          if (screen.screen_name == "Home")
+          if (screen.screen_name === "Home")
             continue;
           break;
         }

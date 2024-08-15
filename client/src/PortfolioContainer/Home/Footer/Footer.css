@@ -4,11 +4,17 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    margin: 0 0 0 0;
 }
 
 .footer-parent {
     width: 100%;
-    height: 100%;
+    height: 100px;
+    background-image: url(../../../assets/Home/shape-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    display: block;
 }
 
 .footer-parent img {
