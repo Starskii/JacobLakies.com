@@ -59,8 +59,8 @@ export default class ScrollService {
   /* CHECK THE SCREEN THATS CURRENTLY UNDER VIEWPORT */
   // which means the screen that is displayed fully
   checkCurrentScreenUnderViewport = (event) => {
+    console.log(event);
     if (!event || Object.keys(event).length < 1) return;
-
     for (let screen of TOTAL_SCREENS) {
       let screenFromDOM = document.getElementById(screen.screen_name);
       if (!screenFromDOM) continue;
