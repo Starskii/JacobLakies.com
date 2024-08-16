@@ -59,7 +59,6 @@ export default class ScrollService {
   /* CHECK THE SCREEN THATS CURRENTLY UNDER VIEWPORT */
   // which means the screen that is displayed fully
   checkCurrentScreenUnderViewport = (event) => {
-    console.log(event);
     if (!event || Object.keys(event).length < 1) return;
     for (let screen of TOTAL_SCREENS) {
       let screenFromDOM = document.getElementById(screen.screen_name);
@@ -80,7 +79,7 @@ export default class ScrollService {
           break;
         }
 
-        if (fullyVisible || (screen_name === "About Me" && partiallyVisible)) {
+        if (fullyVisible || (screen.screen_name === "About Me" && partiallyVisible)) {
           // BROADCAST SCREEN NAME
           ScrollService.currentScreenBroadcaster.next({
             screenInView: screen.screen_name,
