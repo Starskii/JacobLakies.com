@@ -80,7 +80,7 @@ export default class ScrollService {
           break;
         }
 
-        if (fullyVisible) {
+        if (fullyVisible || (screen_name === "About Me" && partiallyVisible)) {
           // BROADCAST SCREEN NAME
           ScrollService.currentScreenBroadcaster.next({
             screenInView: screen.screen_name,
