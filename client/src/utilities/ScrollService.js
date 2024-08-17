@@ -66,6 +66,9 @@ export default class ScrollService {
 
       let fullyVisible = this.isElementInView(screenFromDOM, "complete");
       let partiallyVisible = this.isElementInView(screenFromDOM, "partial");
+      if (screen.screen_name === "About Me"){
+        console.log(`fv: ${fullyVisible} \npv: ${partiallyVisible} \n`);
+      }
 
       if (fullyVisible || partiallyVisible) {
         if (partiallyVisible && !screen.alreadyRendered) {
