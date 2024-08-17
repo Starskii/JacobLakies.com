@@ -60,15 +60,15 @@ export default class ScrollService {
   // which means the screen that is displayed fully
   checkCurrentScreenUnderViewport = (event) => {
     if (!event || Object.keys(event).length < 1) return;
+    //console.clear();
+    //console.log(TOTAL_SCREENS)
     for (let screen of TOTAL_SCREENS) {
       let screenFromDOM = document.getElementById(screen.screen_name);
-      if (!screenFromDOM) continue;
+      //console.log(`Got ${screen.screen_name}`);
 
       let fullyVisible = this.isElementInView(screenFromDOM, "complete");
       let partiallyVisible = this.isElementInView(screenFromDOM, "partial");
-      if (screen.screen_name === "About Me"){
-        console.log(`fv: ${fullyVisible} \npv: ${partiallyVisible} \n`);
-      }
+      //console.log(`\tScreen Name: ${screen.screen_name} \n\tFV: ${fullyVisible} \n\tPV: ${partiallyVisible}\n\n`)
 
       if (fullyVisible || partiallyVisible) {
         if (partiallyVisible && !screen.alreadyRendered) {
@@ -77,17 +77,15 @@ export default class ScrollService {
             fadeInScreen: screen.screen_name,
           });
           screen["alreadyRendered"] = true;
-          if (screen.screen_name === "Home")
-            continue;
-          break;
+          continue;
         }
 
-        if (fullyVisible || (screen.screen_name === "About Me" && partiallyVisible)) {
+        if (fullyVisible || partiallyVisible) {
           // BROADCAST SCREEN NAME
           ScrollService.currentScreenBroadcaster.next({
             screenInView: screen.screen_name,
           });
-          break;
+          continue;
         }
       }
     }
