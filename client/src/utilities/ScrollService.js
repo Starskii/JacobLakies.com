@@ -32,8 +32,8 @@ export default class ScrollService {
 
   /* CHECK IF ELEMENT IS IN VIEW .this simply means if the document appears fully on the screen or not */
   isElementInView = (elem, type) => {
-    if (elem === null)
-      return false;
+    //if (elem === null)
+      //return false;
     let rec = elem.getBoundingClientRect();
     //this method returns a DOMRect object providing information about the size of an element and its position relative to the viewport.
     // the view port  refers to the part of the document you're viewing which is currently visible in its window
@@ -62,15 +62,15 @@ export default class ScrollService {
   // which means the screen that is displayed fully
   checkCurrentScreenUnderViewport = (event) => {
     if (!event || Object.keys(event).length < 1) return;
-    //console.clear();
-    //console.log(TOTAL_SCREENS)
+    console.clear();
+    console.log(TOTAL_SCREENS)
     for (let screen of TOTAL_SCREENS) {
       let screenFromDOM = document.getElementById(screen.screen_name);
-      //console.log(`Got ${screen.screen_name}`);
+      console.log(`Got ${screen.screen_name}`);
 
       let fullyVisible = this.isElementInView(screenFromDOM, "complete");
       let partiallyVisible = this.isElementInView(screenFromDOM, "partial");
-      //console.log(`\tScreen Name: ${screen.screen_name} \n\tFV: ${fullyVisible} \n\tPV: ${partiallyVisible}\n\n`)
+      console.log(`\tScreen Name: ${screen.screen_name} \n\tFV: ${fullyVisible} \n\tPV: ${partiallyVisible}\n\n`)
 
       if (fullyVisible || partiallyVisible) {
         if (partiallyVisible && !screen.alreadyRendered) {
