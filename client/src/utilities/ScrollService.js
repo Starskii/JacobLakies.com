@@ -33,7 +33,7 @@ export default class ScrollService {
   /* CHECK IF ELEMENT IS IN VIEW .this simply means if the document appears fully on the screen or not */
   isElementInView = (elem, type) => {
     if (elem === null)
-      return true;
+      return false;
     let rec = elem.getBoundingClientRect();
     //this method returns a DOMRect object providing information about the size of an element and its position relative to the viewport.
     // the view port  refers to the part of the document you're viewing which is currently visible in its window
